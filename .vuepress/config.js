@@ -18,10 +18,11 @@ module.exports = {
         'flex',
         'coordinates',
         'setGlobal',
+        'tableClick',
         'objectValue',
         'position',
         'editor',
-        'tableClick'
+        'Vue笔记'
       ]
     },
     type: 'blog',
