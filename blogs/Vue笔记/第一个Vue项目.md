@@ -25,8 +25,10 @@ categories:
 
 搭建项目
 ---
-有两种方式创建项目命令行搭建、利用vue ui搭建
-<p>1、命令行搭建</p>
+有两种方式创建项目命令行搭建、利用vue ui搭建。
+
+**1、命令行搭建**
+
 命令行输入vue create xxx(项目名不能是驼峰式命名)，选择vue版本，按键盘方向下键选择，这里我安装的是vue2。
 
 ![图片4](../assets/images/vueCreate1.png)
@@ -44,7 +46,7 @@ categories:
 ![图片7](../assets/images/vueCreate4.png)
 
 ![图片8](../assets/images/vueCreate5.png)
-<p>2、vue ui搭建</p>
+**2、vue ui搭建**
 
 命令行输入vue ui，打开Vue项目管理器。
 
