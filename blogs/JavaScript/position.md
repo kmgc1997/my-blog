@@ -1,6 +1,10 @@
 ---
 title: js获取当前浏览器所在位置
 date: 2022-06-09
+tags:
+ - JavaScript
+categories:
+ -  JavaScript
 ---
 ---
 借助百度地图获取当前浏览器所在位置

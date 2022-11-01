@@ -1,6 +1,10 @@
 ---
 title: js对象的两种取值方式
 date: 2022-06-07
+tags:
+ - JavaScript
+categories:
+ -  JavaScript
 ---
 ---
 Object：{key:value}

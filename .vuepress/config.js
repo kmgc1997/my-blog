@@ -19,9 +19,8 @@ module.exports = {
         'coordinates',
         'setGlobal',
         'tableClick',
-        'objectValue',
-        'position',
         'editor',
+        'swiperFadeEffect',
         'Vue笔记'
       ]
     },
