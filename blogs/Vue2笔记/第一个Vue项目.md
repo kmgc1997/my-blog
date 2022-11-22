@@ -4,7 +4,7 @@ date: 2022-10-11
 tags:
  - Vue
 categories:
- -  Vue笔记
+ -  Vue2笔记
 ---
 ---
 安装Node.js

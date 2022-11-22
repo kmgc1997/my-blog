@@ -4,7 +4,7 @@ date: 2022-10-14
 tags:
  - Vue
 categories:
- -  Vue笔记
+ -  Vue2笔记
 ---
 ---
 [Vue Router](https://router.vuejs.org/zh/) 是 Vue.js 的官方路由。它与 Vue.js 核心深度集成，让用 Vue.js 构建单页应用变得轻而易举。

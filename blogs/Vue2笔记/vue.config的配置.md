@@ -4,7 +4,7 @@ date: 2022-10-13
 tags:
  - Vue
 categories:
- -  Vue笔记
+ -  Vue2笔记
 ---
 ---
 通过vue/cli3以上搭建的项目中没有该配置文件，需要手动创建。
