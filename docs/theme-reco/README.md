@@ -69,3 +69,28 @@ document.getElementById("btn").onclick = debounce(function(){
   console.log('按钮被点击了' + Date.now())
 },1000)
 ```
+---
+for in和for of
+---
+for in适合用于遍历对象，获取对象的键名，它可以把对象原型上的键名也遍历出来。这个键名是字符串类型，用于遍历数组勉强也行(数组的下标是数字)。
+```js
+Object.prototype.work = '前端';
+const obj = {name:'张三',age:24,gender:'男'};
+for(let key in obj){
+  console.log(key); //name age gender work
+  if(key == 'age'){
+    obj[key] = 20;
+  }
+}
+console.log(obj); //{name: "张三", age: 20, gender: "男"}
+```
+for of是ES6新增的功能，用来获取键值对中的值，能遍历数组和字符串，但是不能用来遍历对象。与forEach()不同的是，它可以正确响应break、continue和return语句。
+```js
+const arr = ['apple','pear','orange'];
+for(let value of arr){
+  if(value == 'pear'){
+    continue;
+  }
+  console.log(value); //apple orange
+}
+```
