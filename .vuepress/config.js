@@ -21,7 +21,8 @@ module.exports = {
         'tableClick',
         'editor',
         'swiperFadeEffect',
-        'Vue笔记'
+        'Vue笔记',
+        '百度编辑器设置只读'
       ]
     },
     type: 'blog',
