@@ -1,6 +1,6 @@
 ---
 title: Vue router跳转方式
-date: 2023-02-20
+date: 2023-02-21
 tags:
  - Vue
 categories:
@@ -62,3 +62,5 @@ this.$router.replace的用法和this.$router.push一样，区别在于后者会�
 使用this.$router.go(n)
 ---
 向前或者向后跳转n个页面。n为正整数时向前跳转，n为负整数时向后跳转，n为零时刷新当前页面。
+
+[this.$router的方法](https://v3.router.vuejs.org/zh/api/#router-push)
