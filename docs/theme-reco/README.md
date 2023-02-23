@@ -28,7 +28,7 @@ let arr3 = new Array(arr2.length)
 ---
 节流防抖
 ---
-节流：时间触发后在规定时间内，事件处理函数不会再次被调用，在规定时间内事件只会触发一次。用于滚动加载更多、高频点击、搜索框联想功能等。
+节流：事件触发后在规定时间内，事件处理函数不会再次被调用，在规定时间内事件只会触发一次。用于滚动加载更多、高频点击、搜索框联想功能等。
 ``` js
 /*
  * @param fn要被节流的函数
@@ -93,4 +93,44 @@ for(let value of arr){
   }
   console.log(value); //apple orange
 }
+```
+this指向问题
+---
+如果内部函数没有使用箭头函数定义，则this对象会在运行时绑定到执行函数的上下文。如果在全局函数中调用，则this在非严格模式下等于window，在严
+格模式下等于undefined。如果作为某个对象的方法调用，则this等于这个对象。匿名函数在这种情况下不会绑定到某个对象，这就意味着this会指向window，除非在严格模式下this是undefined。
+```js
+var name = 'Window'; //这里只能使用var声明变量才能注册到Window对象上
+let object = {
+    name: 'Object',
+    getSayName() {
+    return function(){
+      return this.name
+    }
+  } 
+};
+console.log(object.getSayName()()); //Window
+```
+分析一下getSayName函数内部返回的匿名函数的this为什么会指向Window，object调用getSayName函数时getSayName内部this指向是object，object.getSayName()执行完后立马执行匿名函数，此时this指向已经变成了Window而非object。
+
+每个函数在被调用时都会自动创建两个特殊变量：this 和 arguments。内部函数永远不可能直接访问外部函数的这两个变量。但是把this赋值给一个变量，在内部函数使用这个变量访问，或者内部函数使用箭头函数就能直接拿到外部函数的this。
+```js
+var name = 'Window'; //这里只能使用var声明变量才能注册到Window对象上
+let object = {
+  name: 'Object',
+  getSayName() {
+    let that = this;
+    return function(){
+      return that.name
+    }
+  }
+};
+console.log(object.getSayName()()); //Object
+
+let object2 = {
+  name: 'Object2',
+  getSayName() {
+    return ()=> this.name
+  }
+};
+console.log(object2.getSayName()()); //Object2
 ```
