@@ -134,3 +134,19 @@ let object2 = {
 };
 console.log(object2.getSayName()()); //Object2
 ```
+检测window.open是否被屏蔽
+---
+```js
+let isBlocked = false;
+try {
+  let newWindow = window.open("https://www.kmgcweb.top", "_blank");
+  if (newWindow == null){
+    isBlocked = true;
+  } 
+} catch (){
+  isBlocked = true;
+} 
+if (isBlocked){
+  alert("弹出的窗口被屏蔽!");
+}
+```
