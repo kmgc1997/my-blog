@@ -150,3 +150,23 @@ if (isBlocked){
   alert("弹出的窗口被屏蔽!");
 }
 ```
+根据URLSearchParams查询参数
+---
+使用URLSearchParams查询字符串中的参数很容易，其中有get()、set()和delete()等方法。
+```js
+let url = 'https://www.kmgcweb.top/?key=32&flag=true';
+let qs = url.split('?')[1];
+let searchParams = new URLSearchParams(qs);
+console.log(searchParams.toString()); //key=32&flag=true
+console.log(searchParams.has('key')); //true
+console.log(searchParams.get('key')); //32
+searchParams.set('id',102);
+console.log(searchParams.toString()); //key=32&flag=true&id=102
+searchParams.delete('key');
+console.log(searchParams.toString()); //flag=true&id=102
+
+//支持URLSearchParams的浏览器，URLSearchParams的实例是可迭代的
+for(let param of searchParams){
+  console.log(param); //["key", "32"] ["flag", "true"]
+}
+```
