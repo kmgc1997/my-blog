@@ -15,7 +15,11 @@ function copyFun(){
   document.removeEventListener('copy', save); // 移除copy事件
   // 保存方法
   function save(e) {
-    e.clipboardData.setData('text/plain', '需复制的内容'); // 剪贴板内容设置
+    if (e.clipboardData){ 
+      e.clipboardData.setData('text/plain', '需复制的内容'); // 剪贴板内容设置
+    } else if (window.clipboardData){
+      window.clipboardData.setData("text", '需复制的内容'); //兼容IE
+    }
     e.preventDefault();
   }
   alert('复制成功');
