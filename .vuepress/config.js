@@ -21,7 +21,6 @@ module.exports = {
         'tableClick',
         'editor',
         'swiperFadeEffect',
-        'Vue笔记',
         '百度编辑器设置只读'
       ]
     },
@@ -50,6 +49,12 @@ module.exports = {
         avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
         link: 'https://vuepress-theme-reco.recoluan.com/'
       },
+      {
+        title:'Markdown',
+        desc:'Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档',
+        avatar:'https://markdown.com.cn/hero.png',
+        link:'https://markdown.com.cn/'
+      }
     ],
     logo: '/logo.png',
     // 搜索设置

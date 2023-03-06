@@ -96,8 +96,7 @@ for(let value of arr){
 ```
 this指向问题
 ---
-如果内部函数没有使用箭头函数定义，则this对象会在运行时绑定到执行函数的上下文。如果在全局函数中调用，则this在非严格模式下等于window，在严
-格模式下等于undefined。如果作为某个对象的方法调用，则this等于这个对象。匿名函数在这种情况下不会绑定到某个对象，这就意味着this会指向window，除非在严格模式下this是undefined。
+如果内部函数没有使用箭头函数定义，则this对象会在运行时绑定到执行函数的上下文。如果在全局函数中调用，则this在非严格模式下等于window，在严格模式下等于undefined。如果作为某个对象的方法调用，则this等于这个对象。匿名函数在这种情况下不会绑定到某个对象，这就意味着this会指向window，除非在严格模式下this是undefined。
 ```js
 var name = 'Window'; //这里只能使用var声明变量才能注册到Window对象上
 let object = {
@@ -168,5 +167,21 @@ console.log(searchParams.toString()); //flag=true&id=102
 //支持URLSearchParams的浏览器，URLSearchParams的实例是可迭代的
 for(let param of searchParams){
   console.log(param); //["key", "32"] ["flag", "true"]
+}
+```
+利用try catch检测是否为JSON字符串
+---
+```js
+function isJSONString(str){
+  try{
+    JSON.parse(str)
+  }catch(e){
+    return false
+  }
+  return true
+}
+let jsonText = undefined;
+if(isJSONString(jsonText)){ //false
+  console.log(JSON.parse(jsonText));
 }
 ```
