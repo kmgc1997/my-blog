@@ -169,6 +169,46 @@ for(let param of searchParams){
   console.log(param); //["key", "32"] ["flag", "true"]
 }
 ```
+JSON
+---
+JSON是一种轻量级数据格式，可以方便地表示复杂数据结构。这个格式使用JavaScript语法的一个子集表示对象、数组、字符串、数值、布尔值和null。  
+JSON.stringify()：将JavaScript对象序列化为JSON字符串，有三个参数:
+1. 要序列化的对象;
+2. 过滤器，可以是数组或函数;
+3. 控制缩进和空格最多缩进10个空格，可以自定义字符替换空格。
+
+JSON.parse()：将JSON数组解析为JavaScript对象。
+```js
+let obj = {
+  name:'张三',
+  gender:'男',
+  age:24,
+  friend:[
+    {
+      name:'李四',
+      gender:'男'
+    }
+  ]
+}
+let jsonText = JSON.stringify(obj);
+let jsonText2 = JSON.stringify(obj,['name','age']);
+let jsonText3 = JSON.stringify(obj,(key,value)=>{
+  switch(key){
+    case "name":
+      return '我是' + value;
+    case "friend":
+      return value = [];
+    default:
+      return value;
+  }
+})
+let jsonText4 = JSON.stringify(obj,null,2);
+let jsonText5 = JSON.stringify(obj,null,'--'); //JSON.parse(jsonText5)会报错，json中出现-符号
+console.log(jsonText) //{"name":"张三","gender":"男","age":24,"friend":[{"name":"李四","gender":"男"}]}
+console.log(jsonText2) //{"name":"张三","age":24}
+console.log(jsonText3) //{"name":"我是张三","gender":"男","age":24,"friend":[]}
+let obj2 = JSON.parse(jsonText);
+```
 利用try catch检测是否为JSON字符串
 ---
 ```js
