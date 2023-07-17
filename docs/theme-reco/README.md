@@ -23,6 +23,13 @@ let arr1 = new Array(3)
 let arr2 = [1,2,3,4,5,6]
 let arr3 = new Array(arr2.length)
 ```
+### 数组填充
+```js
+//使用fill方法填充数组
+let arr1 = new Array(10).fill(0); //向长度为10的数组中填充0
+//生成1-100的数组
+let arr2 = new Array(100).fill(0).map((item,index)=>index+1)
+```
 [菜鸟教程](https://www.runoob.com/jsref/jsref-obj-array.html)
 
 ---
