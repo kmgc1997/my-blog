@@ -17,6 +17,8 @@ npm install axios安装最新版本，npm install axios@xxx指定版本安装。
 ---
 在src目录下创建名为utils的文件夹，里面新增request.js文件。
 ```js
+//引入axios
+import axios from 'axios';
 // 创建 axios 实例
 const request = axios.create({
   baseURL: process.env.VUE_APP_API_BASE_URL, // API 请求的默认前缀
@@ -50,7 +52,7 @@ import { request } from '@/utils/request'
 
 export function getUserList(parameter) {
   //返回的是一个promise对象
-  return axios({
+  return request({
     url: '/user/list',
     method: 'get',
     params: parameter
